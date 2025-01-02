@@ -24,7 +24,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s; /* Weiche Übergänge */
     padding: 15px;
-    width: 95%;
+    width: minmax;
   }
 
   .book-card:hover {
@@ -34,7 +34,7 @@
 
   .book-cover {
     width: 100%;
-    height: 200%;
+    height: aspect-ratio 2 / 3;
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 12px;
