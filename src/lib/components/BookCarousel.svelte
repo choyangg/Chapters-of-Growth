@@ -133,4 +133,18 @@
     font-size: 0.9rem;
     color: #999;
   }
+
+  @media (max-width: 768px) {
+  .carousel-container {
+    flex-wrap: wrap; /* Karten umbrechen lassen */
+    justify-content: center; /* Zentriere die Karten */
+  }
+
+  .book-card {
+    flex: 0 0 45%; /* Zwei Karten nebeneinander */
+    max-width: 45%; /* Maximale Breite von 45% */
+    margin-bottom: 20px; /* Abstand zwischen den Reihen */
+  }
+}
+
 </style>

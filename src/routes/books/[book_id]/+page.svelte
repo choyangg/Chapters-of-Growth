@@ -120,5 +120,12 @@
     margin: 5px 0;
     font-size: 1rem;
   }
+
+  @media (max-width: 768px) {
+    .book-info {
+      flex-direction: column; /* Bild und Text untereinander */
+      align-items: center; /* Inhalt zentrieren */
+    }
+  }
   
 </style>
