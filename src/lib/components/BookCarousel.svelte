@@ -49,6 +49,7 @@
     max-width: 90%;
     margin: 0 auto;
     position: relative; /* Für absolute Positionierung der Pfeile */
+    position: relative;
   }
 
   .arrow {
@@ -58,9 +59,11 @@
     cursor: pointer;
     color: #007bff;
     transition: color 0.3s, transform 0.3s;
-    position: absolute; /* Positioniere die Pfeile */
-    top: 50%; /* Vertikale Mitte */
-    transform: translateY(-50%); /* Zentriere die Pfeile */
+    position: absolute; /* GEÄNDERT: Pfeile absolut positionieren */
+    top: 50%; /* GEÄNDERT: Vertikale Mitte */
+    position: absolute; /* GEÄNDERT: Pfeile absolut positionieren */
+    top: 50%; /* GEÄNDERT: Vertikale Mitte */
+    transform: translateY(-50%); /* GEÄNDERT: Zentrierung */
   }
 
   .arrow.left {
@@ -92,6 +95,7 @@
     transition: transform 0.2s, box-shadow 0.2s; /* Weiche Übergänge */
     padding: 15px;
     width: 100%;
+    
   }
 
   .book-card:hover {
@@ -101,7 +105,7 @@
 
   .book-cover {
     width: 100%;
-    height: 200%;
+    height: 150%;
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 12px;
