@@ -124,8 +124,10 @@
   }
 
   .book-details {
-    text-align: left;
-    width: 100%;
+    display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  text-align: left;
   }
 
   .book-title {
