@@ -19,10 +19,6 @@
     padding: 0 10px; /* Geringere Seitenränder */
   }
 
-  .row {
-    justify-content: center; /* Zentriere die Karten in der Reihe */
-  }
-
   .col-lg-3 {
     display: flex;
     align-items: stretch; /* Karten haben gleiche Höhe */
