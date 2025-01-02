@@ -4,9 +4,22 @@
 
   // Startindex für das Karussell
   let startIndex = 0;
-  const itemsPerView = 4; // Anzahl der sichtbaren Bücher
-
+  let itemsPerView = 4; // Anzahl der sichtbaren Bücher
+ // Dynamisch die Anzahl der sichtbaren Bücher basierend auf der Fenstergröße anpassen
+ function updateItemsPerView() {
+    const width = window.innerWidth;
+    if (width < 600) {
+      itemsPerView = 2; // 2 Bücher für kleine Bildschirme
+    } else if (width < 900) {
+      itemsPerView = 3; // 3 Bücher für mittlere Bildschirme
+    } else {
+      itemsPerView = 4; // 4 Bücher für große Bildschirme
+    }
+  }
+  window.addEventListener("resize", updateItemsPerView);
+  updateItemsPerView();
   // Funktion zum Zurückblättern im Karussell
+  
   function prev() {
     startIndex = (startIndex - itemsPerView + books.length) % books.length;
   }
@@ -44,12 +57,10 @@
   .carousel {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Gleichmäßige Verteilung */
     gap: 10px;
     max-width: 90%;
     margin: 0 auto;
     position: relative; /* Für absolute Positionierung der Pfeile */
-    position: relative;
   }
 
   .arrow {
@@ -61,9 +72,7 @@
     transition: color 0.3s, transform 0.3s;
     position: absolute; /* GEÄNDERT: Pfeile absolut positionieren */
     top: 50%; /* GEÄNDERT: Vertikale Mitte */
-    position: absolute; /* GEÄNDERT: Pfeile absolut positionieren */
-    top: 50%; /* GEÄNDERT: Vertikale Mitte */
-    transform: translateY(-50%); /* GEÄNDERT: Zentrierung */
+    transform: translateY(-50%);
   }
 
   .arrow.left {
@@ -133,13 +142,6 @@
     font-size: 0.9rem;
     color: #999;
   }
-
-  .carousel-container {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamische Anzahl von Spalten */
-  overflow: hidden;
-}
 
 
 </style>
