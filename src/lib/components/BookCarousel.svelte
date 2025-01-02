@@ -1,23 +1,10 @@
 <script>
+  
   export let books = [];
 
   // Startindex für das Karussell
   let startIndex = 0;
-  let itemsPerView = 4; // Anzahl der sichtbaren Bücher
-  // Dynamisch die Anzahl der sichtbaren Bücher basierend auf der Fenstergröße anpassen
-  function updateItemsPerView() {
-    const width = window.innerWidth;
-    if (width < 600) {
-      itemsPerView = 2; // 2 Bücher für kleine Bildschirme
-    } else if (width < 900) {
-      itemsPerView = 3; // 3 Bücher für mittlere Bildschirme
-    } else {
-      itemsPerView = 4; // 4 Bücher für große Bildschirme
-    }
-  }
-  // Fenstergröße überwachen und beim Start initialisieren
-  window.addEventListener("resize", updateItemsPerView);
-  updateItemsPerView();
+  const itemsPerView = 4; // Anzahl der sichtbaren Bücher
 
   // Funktion zum Zurückblättern im Karussell
   function prev() {
@@ -57,10 +44,12 @@
   .carousel {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Gleichmäßige Verteilung */
     gap: 10px;
     max-width: 90%;
     margin: 0 auto;
     position: relative; /* Für absolute Positionierung der Pfeile */
+    position: relative;
   }
 
   .arrow {
@@ -69,12 +58,12 @@
     font-size: 2rem;
     cursor: pointer;
     color: #007bff;
-    transition:
-      color 0.3s,
-      transform 0.3s;
+    transition: color 0.3s, transform 0.3s;
     position: absolute; /* GEÄNDERT: Pfeile absolut positionieren */
     top: 50%; /* GEÄNDERT: Vertikale Mitte */
-    transform: translateY(-50%);
+    position: absolute; /* GEÄNDERT: Pfeile absolut positionieren */
+    top: 50%; /* GEÄNDERT: Vertikale Mitte */
+    transform: translateY(-50%); /* GEÄNDERT: Zentrierung */
   }
 
   .arrow.left {
@@ -103,11 +92,10 @@
     overflow: hidden;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition:
-      transform 0.2s,
-      box-shadow 0.2s; /* Weiche Übergänge */
+    transition: transform 0.2s, box-shadow 0.2s; /* Weiche Übergänge */
     padding: 15px;
     width: 100%;
+    
   }
 
   .book-card:hover {
@@ -124,10 +112,8 @@
   }
 
   .book-details {
-    display: flex;
-  flex-direction: column;
-  min-height: 150px;
-  text-align: left;
+    text-align: left;
+    width: 100%;
   }
 
   .book-title {
