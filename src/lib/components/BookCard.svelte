@@ -11,7 +11,6 @@
   </div>
 </a>
 
-
 <style>
   .book-card {
     display: flex;
@@ -22,9 +21,13 @@
     overflow: hidden;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s; /* Weiche Übergänge */
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s; /* Weiche Übergänge */
     padding: 15px;
     width: minmax;
+    background-color: red; /* Auffällige Hintergrundfarbe */
+    color: white; /* Textfarbe ändern, um sichtbar zu bleiben */
   }
 
   .book-card:hover {
@@ -43,7 +46,6 @@
   .book-details {
     text-align: left;
     width: 100%;
-    
   }
 
   .book-title {
