@@ -1,5 +1,12 @@
 node_modules
 
+# Output 
+.output 
+.vercel 
+.netlify 
+/.svelte-kit 
+/build 
+
 # Output
 .output
 .vercel
