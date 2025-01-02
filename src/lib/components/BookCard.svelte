@@ -25,7 +25,7 @@
     transition: transform 0.2s, box-shadow 0.2s; /* Weiche Übergänge */
     padding: 15px;
     width: 100%;
-    max-width: 250px;
+     
   }
 
   .book-card:hover {
@@ -35,7 +35,7 @@
 
   .book-cover {
     width: 100%;
-    aspect-ratio: 2/3; /* Verhältnis von Breite zu Höhe */
+    aspect-ratio: 2 / 3
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 12px;
