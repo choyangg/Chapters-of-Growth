@@ -134,17 +134,12 @@
     color: #999;
   }
 
-  @media (max-width: 768px) {
   .carousel-container {
-    flex-wrap: wrap; /* Karten umbrechen lassen */
-    justify-content: center; /* Zentriere die Karten */
-  }
-
-  .book-card {
-    flex: 0 0 45%; /* Zwei Karten nebeneinander */
-    max-width: 45%; /* Maximale Breite von 45% */
-    margin-bottom: 20px; /* Abstand zwischen den Reihen */
-  }
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamische Anzahl von Spalten */
+  overflow: hidden;
 }
+
 
 </style>
