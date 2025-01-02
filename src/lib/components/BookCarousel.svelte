@@ -1,5 +1,5 @@
 <script>
-  // Bücher-Daten werden von der Seite übergeben
+  
   export let books = [];
 
   // Startindex für das Karussell
