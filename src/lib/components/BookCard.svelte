@@ -26,8 +26,6 @@
       box-shadow 0.2s; /* Weiche Übergänge */
     padding: 15px;
     width: minmax;
-    background-color: red; /* Auffällige Hintergrundfarbe */
-    color: white; /* Textfarbe ändern, um sichtbar zu bleiben */
   }
 
   .book-card:hover {
