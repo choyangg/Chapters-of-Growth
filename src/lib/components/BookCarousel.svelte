@@ -4,7 +4,21 @@
 
   // Startindex für das Karussell
   let startIndex = 0;
-  const itemsPerView = 4; // Anzahl der sichtbaren Bücher
+  let itemsPerView = calculateItemsPerView();
+
+function calculateItemsPerView() {
+  const width = typeof window !== 'undefined' ? window.innerWidth : 0;
+  if (width < 600) return 2; // Kleine Bildschirme
+  if (width < 900) return 3; // Mittlere Bildschirme
+  return 4; // Große Bildschirme
+}
+
+// Dynamisch aktualisieren, wenn die Fenstergröße geändert wird
+if (typeof window !== 'undefined') {
+  window.addEventListener("resize", () => {
+    itemsPerView = calculateItemsPerView();
+  });
+}
 
   // Funktion zum Zurückblättern im Karussell
   function prev() {
@@ -114,6 +128,7 @@
   .book-details {
     text-align: left;
     width: 100%;
+    min-height: 150px;
   }
 
   .book-title {
