@@ -1,3 +1,7 @@
+a {
+  text-decoration: none; /* Entfernt die Unterstreichung für alle Links */
+  color: inherit; /* Übernimmt die Textfarbe des Eltern-Elements */
+}
 .back-button {
   background-color: #007bff;
   color: white;

@@ -35,7 +35,7 @@
 
   .book-cover {
     width: 100%;
-    aspect-ratio: 2 / 3
+    aspect-ratio: 2 / 3; /* Breite:Höhe-Verhältnis */
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 12px;
