@@ -32,8 +32,26 @@
       <ul class="quotes-list">
         {#each quotes as quote}
           <li class="quote-item">
-            <p>"{quote.text}"</p>
-            <p>- {quote.quoteBy}</p>
+            <div class="quote-text">
+              <p>"{quote.text}"</p>
+              <p>- {quote.quoteBy}</p>
+            </div>
+            
+            <!-- Delete-Button -->
+            <form
+              method="POST"
+              action="?/delete"
+              on:submit={(event) => {
+                if (!confirm("Are you sure you want to delete this quote?")) {
+                  event.preventDefault(); // Verhindert das Absenden des Formulars
+                }
+              }}
+            >
+              <input type="hidden" name="id" value={quote._id} />
+              <button type="submit" class="delete-button" aria-label="Delete">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </form>
           </li>
         {/each}
       </ul>
@@ -120,6 +138,18 @@
     margin: 5px 0;
     font-size: 1rem;
   }
+  .quote-item {
+  display: flex; /* Flexbox für horizontale Anordnung */
+  justify-content: space-between; /* Zitat links, Button rechts */
+  align-items: center; /* Vertikale Zentrierung */
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd; /* Trennlinie zwischen den Quotes */
+}
+
+.quote-text {
+  flex: 1; /* Text nimmt den verfügbaren Platz ein */
+  margin-right: 10px; /* Abstand zwischen Text und Button */
+}
 
   @media (max-width: 768px) {
     .book-info {

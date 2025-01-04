@@ -13,4 +13,20 @@ export async function load({ params }) {
         book,    // Buchdetails
         quotes,  // Zugehörige Quotes
     };
+
 }
+
+export const actions = {
+  delete: async ({ request }) => {
+    const data = await request.formData();
+    try {
+      const success = await db.deleteQuote(data.get("id")); // Löscht Quote und gibt Erfolg zurück
+
+      if (!success) {
+        console.log("Failed to delete the quote.");
+      }
+    } catch (error) {
+      console.error("Error during deletion:", error);
+    }
+  },
+};
