@@ -49,7 +49,7 @@
             >
               <input type="hidden" name="id" value={quote._id} />
               <button type="submit" class="delete-button" aria-label="Delete">
-                <i class="fa fa-trash" aria-hidden="true"></i>
+                <i class="bi bi-trash-fill"></i>
               </button>
             </form>
           </li>
@@ -128,12 +128,6 @@
   font-weight: normal; /* Keine Hervorhebung */
 }
 
-  .quote-item {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-    
-  }
-
   .quote-item p {
     margin: 5px 0;
     font-size: 1rem;
@@ -148,7 +142,7 @@
 
 .quote-text {
   flex: 1; /* Text nimmt den verfügbaren Platz ein */
-  margin-right: 10px; /* Abstand zwischen Text und Button */
+  margin-right: 15px; /* Abstand zwischen Text und Button */
 }
 
   @media (max-width: 768px) {

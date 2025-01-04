@@ -21,7 +21,7 @@ a {
 }
 
 .delete-button {
-  margin-left: auto; /* Schiebt den Button ganz nach rechts */
+  margin-left: auto; 
   background-color: #dc3545;
   color: white;
   border: none;

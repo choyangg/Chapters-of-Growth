@@ -29,7 +29,7 @@
     >
       <input type="hidden" name="id" value={quote._id} />
       <button type="submit" class="delete-button" aria-label="Delete">
-        <i class="fa fa-trash" aria-hidden="true"></i>
+        <i class="bi bi-trash3-fill"></i>
       </button>
     </form>
   </div>
@@ -69,5 +69,12 @@
   a:hover {
     text-decoration: underline;
   }
-  
+  .quote-details {
+    display: flex; /* Horizontale Anordnung von Inhalt und Button */
+    justify-content: space-between; /* Abstand zwischen Text und Button */
+  }
+
+  .delete-button {
+    margin-left: auto; /* Schiebt den Button ganz nach rechts */
+  }
 </style>
