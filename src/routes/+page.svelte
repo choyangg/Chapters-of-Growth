@@ -39,7 +39,6 @@
   .book-gallery {
     text-align: center;
     padding: 40px 20px;
-    background-color: #ffffff;
   }
 
   .book-gallery h2 {
