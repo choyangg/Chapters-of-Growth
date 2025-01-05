@@ -1,33 +1,26 @@
 <script>
-  
   export let books = [];
 
-  // Startindex für das Karussell
   let startIndex = 0;
   let itemsPerView = calculateItemsPerView();
 
-function calculateItemsPerView() {
-  const width = typeof window !== 'undefined' ? window.innerWidth : 0;
-  if (width < 600) return 2; // Kleine Bildschirme
-  if (width < 900) return 3; // Mittlere Bildschirme
-  return 4; // Große Bildschirme
-}
-
-// Dynamisch aktualisieren, wenn die Fenstergröße geändert wird
-if (typeof window !== 'undefined') {
-  window.addEventListener("resize", () => {
-    itemsPerView = calculateItemsPerView();
-  });
-}
-
-  // Funktion zum Zurückblättern im Karussell
-  function prev() {
-    startIndex = (startIndex - itemsPerView + books.length) % books.length;
+  function calculateItemsPerView() {
+    const width = typeof window !== "undefined" ? window.innerWidth : 0;
+    if (width < 600) return 2;
+    if (width < 900) return 3;
+    return 4;
   }
 
-  // Funktion zum Weiterblättern im Karussell
+  function adjustIndex(index) {
+    return (index + books.length) % books.length;
+  }
+
+  function prev() {
+    startIndex = adjustIndex(startIndex - itemsPerView);
+  }
+
   function next() {
-    startIndex = (startIndex + itemsPerView) % books.length;
+    startIndex = adjustIndex(startIndex + itemsPerView);
   }
 </script>
 
@@ -72,7 +65,9 @@ if (typeof window !== 'undefined') {
     font-size: 2rem;
     cursor: pointer;
     color: #007bff;
-    transition: color 0.3s, transform 0.3s;
+    transition:
+      color 0.3s,
+      transform 0.3s;
     position: absolute; /* GEÄNDERT: Pfeile absolut positionieren */
     top: 50%; /* GEÄNDERT: Vertikale Mitte */
     position: absolute; /* GEÄNDERT: Pfeile absolut positionieren */
@@ -81,11 +76,10 @@ if (typeof window !== 'undefined') {
   }
 
   .arrow.left {
-    left: -40px; /* Abstand vom linken Rand des Karussells */
+    left: -40px;
   }
-
   .arrow.right {
-    right: -40px; /* Abstand vom rechten Rand des Karussells */
+    right: -40px;
   }
 
   .carousel-container {
@@ -106,10 +100,11 @@ if (typeof window !== 'undefined') {
     overflow: hidden;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s; /* Weiche Übergänge */
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s; /* Weiche Übergänge */
     padding: 15px;
     width: 100%;
-    
   }
 
   .book-card:hover {
