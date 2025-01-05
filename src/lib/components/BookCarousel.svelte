@@ -6,9 +6,15 @@
 
   function calculateItemsPerView() {
     const width = typeof window !== "undefined" ? window.innerWidth : 0;
-    if (width < 600) return 2;
-    if (width < 900) return 3;
-    return 4;
+    if (width < 600) return 2; 
+    if (width < 900) return 3; 
+    return 4; 
+  }
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("resize", () => {
+      itemsPerView = calculateItemsPerView();
+    });
   }
 
   function adjustIndex(index) {
