@@ -109,7 +109,7 @@
 
   .book-cover {
     width: 100%;
-    height: 150%;
+    aspect-ratio: 2 / 3;
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 12px;
@@ -118,7 +118,7 @@
   .book-details {
     text-align: left;
     width: 100%;
-    min-height: 150px;
+    min-height: 100px;
   }
 
   .book-title {

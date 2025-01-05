@@ -44,6 +44,7 @@
   .book-details {
     text-align: left;
     width: 100%;
+    min-height: 100px; 
     
   }
 
