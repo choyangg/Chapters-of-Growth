@@ -41,13 +41,6 @@
     margin-bottom: 12px;
   }
 
-  .book-details {
-    text-align: left;
-    width: 100%;
-    min-height: 100px; 
-    
-  }
-
   .book-title {
     font-size: 1.02rem;
     font-weight: bold;

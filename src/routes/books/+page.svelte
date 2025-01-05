@@ -13,16 +13,3 @@
     {/each}
   </div>
 </div>
-
-<style>
-  .container-fluid {
-    padding: 0 10px; /* Geringere Seitenränder */
-  }
-
-  .col-lg-3 {
-    display: flex;
-    align-items: stretch; /* Karten haben gleiche Höhe */
-  }
-</style>
-
-
