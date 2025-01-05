@@ -1,16 +1,11 @@
-import { MongoClient, ObjectId } from "mongodb"; // See https://www.mongodb.com/docs/drivers/node/current/quick-start/
+import { MongoClient, ObjectId } from "mongodb"; 
 import { DB_URI } from "$env/static/private";
 
 const client = new MongoClient(DB_URI);
 
 await client.connect();
-const db = client.db("SchlussProjektDB"); // select database
+const db = client.db("SchlussProjektDB"); 
 
-//////////////////////////////////////////
-// Books
-//////////////////////////////////////////
-
-// Get all books
 async function getBooks() {
   let books = [];
   try {
@@ -18,41 +13,36 @@ async function getBooks() {
     const query = {};
     books = await collection.find(query).toArray();
     books.forEach((book) => {
-      book._id = book._id.toString(); // convert ObjectId to String
+      book._id = book._id.toString(); 
     });
   } catch (error) {
     console.log(error);
-    // TODO: errorhandling
+    
   }
   return books;
 }
 
-// Get book by ID
+
 async function getBook(id) {
   let book = null;
   try {
     const collection = db.collection("books");
-    const query = { _id: new ObjectId(id) }; // filter by id
+    const query = { _id: new ObjectId(id) }; 
     book = await collection.findOne(query);
 
     if (!book) {
       console.log("No book with id " + id);
-      // TODO: errorhandling
+      
     } else {
-      book._id = book._id.toString(); // convert ObjectId to String
+      book._id = book._id.toString(); 
     }
   } catch (error) {
     console.log(error.message);
-    // TODO: errorhandling
   }
   return book;
 }
 
-//////////////////////////////////////////
-// Quotes
-//////////////////////////////////////////
 
-// Get all quotes
 async function getQuotes() {
   let quotes = [];
   try {
@@ -60,16 +50,15 @@ async function getQuotes() {
     const query = {};
     quotes = await collection.find(query).toArray();
     quotes.forEach((quote) => {
-      quote._id = quote._id.toString(); // convert ObjectId to String
+      quote._id = quote._id.toString(); 
     });
   } catch (error) {
     console.log(error);
-    // TODO: errorhandling
   }
   return quotes;
 }
 
-// Create a new quote
+
 async function createQuote(quote) {
   try {
       const collection = db.collection("quotes");
@@ -82,39 +71,37 @@ async function createQuote(quote) {
 }
 
 
-// Delete quote by ID
 async function deleteQuote(id) {
   try {
     const collection = db.collection("quotes");
-    const query = { _id: new ObjectId(id) }; // Filter by ID
+    const query = { _id: new ObjectId(id) }; 
     const result = await collection.deleteOne(query);
 
     if (result.deletedCount === 0) {
       console.log("No quote with id " + id);
-      return false; // Löschung nicht erfolgreich
+      return false; 
     } else {
       console.log("Quote with id " + id + " has been successfully deleted.");
-      return true; // Löschung erfolgreich
+      return true; 
     }
   } catch (error) {
     console.error("Error deleting quote: " + error.message);
-    return false; // Fehlerfall
+    return false; 
   }
 }
 
-// Get all quotes by bookId
+
 async function getQuotesByBookId(bookId) {
   let quotes = [];
   try {
     const collection = db.collection("quotes");
-    const query = { bookId: bookId }; // Filter nach Buch-ID
+    const query = { bookId: bookId }; 
     quotes = await collection.find(query).toArray();
     quotes.forEach((quote) => {
-      quote._id = quote._id.toString(); // Convert ObjectId to String
+      quote._id = quote._id.toString(); 
     });
   } catch (error) {
     console.log(error);
-    // TODO: error handling
   }
   return quotes;
 }
@@ -123,7 +110,7 @@ export default {
   getBooks,
   getBook,
   getQuotes,
-  getQuotesByBookId, // Neue Funktion exportieren
+  getQuotesByBookId, 
   createQuote,
   deleteQuote,
 };
