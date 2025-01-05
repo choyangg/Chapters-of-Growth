@@ -31,10 +31,8 @@
 </script>
 
 <div class="carousel">
-  <!-- Linker Pfeil -->
   <button class="arrow left" on:click={prev}>&#10094;</button>
 
-  <!-- Bücher im Karussell -->
   <div class="carousel-container">
     {#each books.slice(startIndex, startIndex + itemsPerView) as book}
       <a href={`/books/${book._id}`} class="book-card">
@@ -48,20 +46,19 @@
     {/each}
   </div>
 
-  <!-- Rechter Pfeil -->
   <button class="arrow right" on:click={next}>&#10095;</button>
 </div>
 
 <style>
-  /* Stil des Karussells */
+ 
   .carousel {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Gleichmäßige Verteilung */
+    justify-content: space-between;
     gap: 10px;
     max-width: 90%;
     margin: 0 auto;
-    position: relative; /* Für absolute Positionierung der Pfeile */
+    position: relative;
     position: relative;
   }
 
@@ -74,48 +71,40 @@
     transition:
       color 0.3s,
       transform 0.3s;
-    position: absolute; /* GEÄNDERT: Pfeile absolut positionieren */
-    top: 50%; /* GEÄNDERT: Vertikale Mitte */
-    position: absolute; /* GEÄNDERT: Pfeile absolut positionieren */
-    top: 50%; /* GEÄNDERT: Vertikale Mitte */
-    transform: translateY(-50%); /* GEÄNDERT: Zentrierung */
+    position: absolute; 
+    top: 50%; 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%);
   }
 
-  .arrow.left {
-    left: -40px;
-  }
-  .arrow.right {
-    right: -40px;
-  }
+  .arrow.left {left: -50px;}
+  .arrow.right {right: -50px;}
 
   .carousel-container {
     display: flex;
     gap: 20px;
-    overflow: hidden;
     flex: 1;
-    justify-content: center; /* Zentriere die Bücher */
+    justify-content: center;
   }
 
-  /* Einheitlicher Stil für Bücher */
   .book-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     border: 1px solid #ddd;
     border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition:
       transform 0.2s,
-      box-shadow 0.2s; /* Weiche Übergänge */
+      box-shadow 0.2s;
     padding: 15px;
     width: 100%;
   }
 
   .book-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   }
 
   .book-cover {
