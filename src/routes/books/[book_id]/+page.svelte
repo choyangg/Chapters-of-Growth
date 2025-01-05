@@ -62,7 +62,7 @@
 </section>
 
 <style>
-  /* Gesamtstil der Detailseite */
+
   .book-detail {
     padding: 20px;
     max-width: 800px;
@@ -72,7 +72,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  /* Buch-Info Layout */
+
   .book-info {
     display: flex;
     gap: 20px;
@@ -80,7 +80,7 @@
 
   .book-cover {
     width: 200px;
-    height: auto;
+    height: 300px;
     border-radius: 10px;
   }
 
@@ -99,11 +99,6 @@
     font-size: 1rem;
   }
 
-  .details strong {
-    font-weight: bold;
-  }
-
-  /* Quotes Section */
   .quotes-section {
     margin-top: 30px;
     padding: 20px;
