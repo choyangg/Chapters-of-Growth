@@ -29,13 +29,13 @@
   }
 
   .book-card:hover {
-    transform: scale(1.03); /* Vergrößert die Karte leicht */
+    transform: scale(1.01);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
   .book-cover {
     width: 100%;
-    aspect-ratio: 2 / 3; /* Breite:Höhe-Verhältnis */
+    aspect-ratio: 2 / 3; 
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 12px;
