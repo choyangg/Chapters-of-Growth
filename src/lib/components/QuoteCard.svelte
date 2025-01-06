@@ -19,8 +19,7 @@
 
     <!-- Delete-Button -->
     <form
-      method="POST"
-      action="?/delete"
+      method="POST" action="?/delete"
       on:submit={(event) => {
         if (!confirm("Are you sure you want to delete this quote?")) {
           event.preventDefault();
@@ -53,12 +52,13 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;
+    margin-bottom: 5px;
   }
 
   .quote-author {
     font-size: 1rem;
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   a {
@@ -75,6 +75,7 @@
   .quote-details {
     display: flex;
     justify-content: space-between; 
+    margin-top: 10px;
   }
 
   .delete-button {
