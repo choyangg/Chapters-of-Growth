@@ -1,18 +1,15 @@
 <script>
-  export let data; // Daten werden von der Server-Seite geladen
-  const { book, quotes } = data; // Buch-Details und zugehörige Quotes extrahieren
+  export let data; 
+  const { book, quotes } = data; 
 
-  // Zurück zur vorherigen Seite navigieren
   function goBack() {
     window.history.back();
   }
 </script>
 
 <section class="book-detail">
-  <!-- Zurück-Button -->
   <button class="back-button" on:click={goBack}>← Back</button>
 
-  <!-- Buchdetails -->
   <div class="book-info">
     <img src={book.cover} alt={book.title} class="book-cover" />
     <div class="details">
@@ -25,7 +22,6 @@
     </div>
   </div>
 
-  <!-- Zugehörige Quotes anzeigen -->
   <section class="quotes-section">
     <h2>Quotes from this Book</h2>
     {#if quotes.length > 0}
@@ -37,13 +33,12 @@
               <p>- {quote.quoteBy}</p>
             </div>
             
-            <!-- Delete-Button -->
             <form
               method="POST"
               action="?/delete"
               on:submit={(event) => {
                 if (!confirm("Are you sure you want to delete this quote?")) {
-                  event.preventDefault(); // Verhindert das Absenden des Formulars
+                  event.preventDefault(); 
                 }
               }}
             >
@@ -120,7 +115,7 @@
   .quote-item p:last-child {
   font-size: 0.9rem;
   color: #555;
-  font-weight: normal; /* Keine Hervorhebung */
+  font-weight: normal; 
 }
 
   .quote-item p {
@@ -128,22 +123,17 @@
     font-size: 1rem;
   }
   .quote-item {
-  display: flex; /* Flexbox für horizontale Anordnung */
-  justify-content: space-between; /* Zitat links, Button rechts */
-  align-items: center; /* Vertikale Zentrierung */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #ddd; /* Trennlinie zwischen den Quotes */
-}
-
-.quote-text {
-  flex: 1; /* Text nimmt den verfügbaren Platz ein */
-  margin-right: 15px; /* Abstand zwischen Text und Button */
+  border-bottom: 1px solid #ddd;
 }
 
   @media (max-width: 768px) {
     .book-info {
-      flex-direction: column; /* Bild und Text untereinander */
-      align-items: center; /* Inhalt zentrieren */
+      flex-direction: column;
+      align-items: center;
     }
   }
   

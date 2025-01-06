@@ -14,7 +14,7 @@ export const actions = {
   delete: async ({ request }) => {
     const data = await request.formData();
     try {
-      const success = await db.deleteQuote(data.get("id")); // Löscht Quote und gibt Erfolg zurück
+      const success = await db.deleteQuote(data.get("id"));
 
       if (!success) {
         console.log("Failed to delete the quote.");
