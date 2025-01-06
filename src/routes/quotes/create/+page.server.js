@@ -10,8 +10,12 @@ export const actions = {
       bookId: data.get("bookId") || null,
     };
 
-    await db.createQuote(quote);
-
-    return { success: true };
+    try {
+      await db.createQuote(quote);
+      return { success: true };
+    } catch (error) {
+      console.error("Error creating quote:", error);
+      return { success: false };
+    }
   },
 };

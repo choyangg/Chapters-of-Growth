@@ -8,7 +8,6 @@
 <section class="add-quote-section">
   <h1>Add a Quote</h1>
 
-  <!-- Erklärender Text -->
   <p class="info-text">
     All fields marked with 
     <span class="required">*</span> are required.
@@ -54,9 +53,11 @@
   </form>
 
   <!-- Erfolgs-/Fehlermeldung unten -->
-  {#if form?.success}
-    <p class="text-success">Quote successfully added!</p>
-  {/if}
+  {#if form?.success === true}
+  <p class="text-success">Quote successfully added!</p>
+{:else if form?.success === false}
+  <p class="text-error">Error adding quote. Please try again.</p>
+{/if}
 </section>
 
 <style>
@@ -88,20 +89,19 @@
     margin-top: 20px;
     border-radius: 5px;
     text-align: center;
-    font-size: 1.2rem; /* Größere Schrift */
+    font-size: 1.2rem; 
   }
 
-  .back-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
+  .text-error {
+    color: #721c24;
+    font-weight: bold;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-top: 20px;
     border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-bottom: 20px;
-    transition: background-color 0.3s;
-    text-decoration: none;
-    display: inline-block;
-  }
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 </style>
