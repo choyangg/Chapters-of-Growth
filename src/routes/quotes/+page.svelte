@@ -2,7 +2,7 @@
     import QuoteCard from "$lib/components/QuoteCard.svelte";
 
     export let data;
-    const { quotes, message } = data; // Erfolgs-/Fehlermeldung hinzufügen
+    const { quotes } = data; // Erfolgs-/Fehlermeldung hinzufügen
 </script>
 
 <div class="intro">
@@ -11,13 +11,6 @@
     <img src="/images/inspirationalBackground.jpg" alt="Inspiration" class="intro-image" />
     <a href="/quotes/create" class="add-quote-button">Add Your Inspirational Quotes</a>
 </div>
-
-<!-- Erfolgs-/Fehlermeldung -->
-{#if message}
-  <div class="message-box">
-    <p>{message}</p>
-  </div>
-{/if}
 
 <div class="quotes-container">
     {#if quotes.length > 0}
@@ -79,15 +72,5 @@
         gap: 20px;
         justify-content: center;
         padding: 20px;
-    }
-
-    .message-box {
-        background-color: #d4edda;
-        color: #155724;
-        border: 1px solid #c3e6cb;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 20px 0;
-        text-align: center;
     }
 </style>

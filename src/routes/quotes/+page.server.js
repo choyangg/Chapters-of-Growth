@@ -15,6 +15,7 @@ export async function load() {
   }));
 
   return {
+
     quotes: quotesWithBookTitles.reverse(),
   };
 }
