@@ -64,11 +64,14 @@
   a {
     color: #007bff;
     text-decoration: none;
+    font-weight: normal;
   }
 
   a:hover {
     text-decoration: underline;
+    font-weight: bold;
   }
+
   .quote-details {
     display: flex;
     justify-content: space-between; 
