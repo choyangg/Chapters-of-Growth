@@ -17,13 +17,13 @@
       <p><strong>Book:</strong> None</p>
     {/if}
 
-    <!-- Formular für das Löschen mit Bestätigung -->
+    <!-- Delete-Button -->
     <form
       method="POST"
       action="?/delete"
       on:submit={(event) => {
         if (!confirm("Are you sure you want to delete this quote?")) {
-          event.preventDefault(); // Verhindert das Absenden des Formulars
+          event.preventDefault();
         }
       }}
     >
@@ -70,11 +70,11 @@
     text-decoration: underline;
   }
   .quote-details {
-    display: flex; /* Horizontale Anordnung von Inhalt und Button */
-    justify-content: space-between; /* Abstand zwischen Text und Button */
+    display: flex;
+    justify-content: space-between; 
   }
 
   .delete-button {
-    margin-left: auto; /* Schiebt den Button ganz nach rechts */
+    margin-left: auto;
   }
 </style>
