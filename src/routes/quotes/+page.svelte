@@ -2,7 +2,7 @@
     import QuoteCard from "$lib/components/QuoteCard.svelte";
 
     export let data;
-    const { quotes } = data; // Erfolgs-/Fehlermeldung hinzufügen
+    const { quotes } = data; 
 </script>
 
 <div class="intro">

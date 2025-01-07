@@ -1,5 +1,5 @@
 <script>
-  let { book } = $props(); // Buchdaten werden als Prop übergeben
+  let { book } = $props();
 </script>
 
 <a href={`/books/${book._id}`} class="book-card">
@@ -22,7 +22,7 @@
     overflow: hidden;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s; /* Weiche Übergänge */
+    transition: transform 0.2s, box-shadow 0.2s;
     padding: 15px;
     width: 100%;
      

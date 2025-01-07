@@ -52,7 +52,6 @@
     <button type="submit" class="btn btn-primary">Add Quote</button>
   </form>
 
-  <!-- Erfolgs-/Fehlermeldung unten -->
   {#if form?.success === true}
   <p class="text-success">Quote successfully added!</p>
 {:else if form?.success === false}

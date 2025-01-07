@@ -1,6 +1,6 @@
 <script>
     import "./styles.css";
-    let { children } = $props(); // Inhalte der Child-Seiten
+    let { children } = $props();
 </script>
 
 <header>
