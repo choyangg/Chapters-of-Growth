@@ -4,6 +4,7 @@ export async function load() {
   const quotes = await db.getQuotes();
   const books = await db.getBooks();
 
+  //Verknüpfe Buch-IDs mit Buchtiteln
   const bookMap = books.reduce((map, book) => {
     map[book._id] = book.title;
     return map;
