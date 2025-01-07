@@ -63,7 +63,6 @@
 
   a {
     color: #007bff;
-    text-decoration: none;
     font-weight: normal;
   }
 
