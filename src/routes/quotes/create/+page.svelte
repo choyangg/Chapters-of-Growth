@@ -27,12 +27,22 @@
 
     <div class="mb-3">
       <label for="quoteBy" class="form-label">Author of Quote<span class="required">*</span></label>
-      <input name="quoteBy" id="quoteBy" class="form-control" type="text" required />
+      <input 
+      name="quoteBy" 
+      id="quoteBy" 
+      class="form-control" 
+      type="text" 
+      required 
+      />
     </div>
 
     <div class="mb-3">
       <label for="bookId" class="form-label">Related Book (Optional)</label>
-      <select name="bookId" id="bookId" class="form-select">
+      <select 
+      name="bookId" 
+      id="bookId" 
+      class="form-select">
+      
         <option value="">None</option>
         <option value="64b0c7ea2b8e4c001c2f6d01">The Subtle Art of Not Giving a F*ck</option>
         <option value="64b0c7ea2b8e4c001c2f6d02">Atomic Habits</option>
