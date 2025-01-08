@@ -69,14 +69,14 @@
     font-size: 2rem;
     cursor: pointer;
     color: #007bff;
-    transition:
-      color 0.3s,
-      transform 0.3s;
-    position: absolute; 
-    top: 50%; 
+    transition: transform 0.3s;
     position: absolute; 
     top: 50%; 
     transform: translateY(-50%);
+  }
+
+  .arrow:hover {
+  transform: translateY(-50%) scale(1.2); 
   }
 
   .arrow.left {left: -50px;}
