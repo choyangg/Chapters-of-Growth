@@ -21,11 +21,11 @@
     return (index + books.length) % books.length;
   }
 
-  //links
+  // Scrollt links
   function prev() {
     startIndex = adjustIndex(startIndex - itemsPerView);
   }
-  //rechts
+  // Scrollt rechts
   function next() {
     startIndex = adjustIndex(startIndex + itemsPerView);
   }
